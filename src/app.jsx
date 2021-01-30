@@ -9,6 +9,8 @@ export default function App() {
     const [articles, setArticles] = useState(null)
     const [articleCID, setArticleCID] = useState('bafyriqcdu5joxvs26abwz435rvc56bv3l2z2t6u6pids57c7kbfm7q74oh3svmw2oi3z4va5skh2u5ib2dxpjphtvdtvyfhj62nffkgxqo7aa')
     const [notice, setNotice] = useState('empty')
+    //If you want to use CustomServer, it must enable Websocket.
+    const customServer = '/dns4/gradle.otakusaikou.com/tcp/443/wss/p2p/12D3KooWMs5i3LMF7yZj1bYBKvUoP4MuZwwMFFB4eoNU435rrFFn'
 
     useEffect(async () => {
         //Boot IPFS Browser Node
@@ -19,6 +21,7 @@ export default function App() {
         const {id, agentVersion, protocolVersion} = await initNode.id()
         setNodeInfo({id, agentVersion, protocolVersion})
         console.log({id, agentVersion, protocolVersion})
+        await initNode.swarm.connect(customServer)
     }, [])
 
     useEffect(async () => {
