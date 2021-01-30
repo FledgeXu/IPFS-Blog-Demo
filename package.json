@@ -4,10 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "cross-env NODE_ENV=development webpack serve --config webpack.config.js --mode development"
+    "start": "cross-env NODE_ENV=development webpack serve --config webpack.config.js",
+    "build": "cross-env NODE_ENV=production webpack --config webpack.config.js"
   },
   "author": "",
-  "license": "GPL-3",
+  "license": "GPL-3.0-or-later",
   "devDependencies": {
     "@babel/core": "^7.12.10",
     "@babel/plugin-transform-async-to-generator": "^7.12.1",

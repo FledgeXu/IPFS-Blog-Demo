@@ -8,7 +8,6 @@ module.exports = {
             path: require.resolve("path-browserify")
         }
     },
-    mode:'development',
     entry: "./src/index.jsx",
     module: {
         rules: [
@@ -23,7 +22,7 @@ module.exports = {
         ],
     },
     output: {
-        path: path.resolve(__dirname, "../dist"),
+        path: path.resolve(__dirname, "./dist"),
         filename: "js/[name].js",
         publicPath: "./",
     },
